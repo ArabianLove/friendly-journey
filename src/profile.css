@@ -1,0 +1,271 @@
+/* User Profile Page Styles */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #f6f8fa;
+  color: #24292f;
+  line-height: 1.5;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+
+.profile-container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Sidebar ─────────────────────────────────────────── */
+
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+}
+
+.profile-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #d0d7de;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.profile-username {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #57606a;
+}
+
+.profile-bio {
+  font-size: 0.9375rem;
+  color: #24292f;
+}
+
+.profile-follow-btn {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #24292f;
+  background-color: #f6f8fa;
+  border: 1px solid rgba(31, 35, 40, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.profile-follow-btn:hover {
+  background-color: #eaeef2;
+}
+
+/* ── Meta details (location, website, etc.) ─────────── */
+
+.profile-meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.profile-meta li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #57606a;
+}
+
+.profile-meta .icon {
+  flex-shrink: 0;
+  fill: #57606a;
+}
+
+.profile-meta a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.profile-meta a:hover {
+  text-decoration: underline;
+}
+
+/* ── Stats (followers / following) ──────────────────── */
+
+.profile-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.profile-stats a {
+  color: #57606a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profile-stats a:hover {
+  color: #0969da;
+}
+
+.profile-stats strong {
+  color: #24292f;
+}
+
+/* ── Main content area ───────────────────────────────── */
+
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Section cards ───────────────────────────────────── */
+
+.profile-section {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.profile-section-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #d0d7de;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-section-header a {
+  font-weight: 400;
+  color: #0969da;
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+.profile-section-header a:hover {
+  text-decoration: underline;
+}
+
+/* ── Pinned repositories grid ────────────────────────── */
+
+.pinned-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background-color: #d0d7de;
+}
+
+.pinned-repo-card {
+  background: #ffffff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pinned-repo-card:hover {
+  background: #f6f8fa;
+}
+
+.repo-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0969da;
+  text-decoration: none;
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-description {
+  font-size: 0.75rem;
+  color: #57606a;
+  flex: 1;
+}
+
+.repo-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #57606a;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.repo-language-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ── Contribution calendar placeholder ───────────────── */
+
+.contribution-calendar {
+  padding: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  gap: 2px;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background-color: #ebedf0;
+}
+
+.calendar-cell.level-1 { background-color: #9be9a8; }
+.calendar-cell.level-2 { background-color: #40c463; }
+.calendar-cell.level-3 { background-color: #30a14e; }
+.calendar-cell.level-4 { background-color: #216e39; }
+
+/* ── Responsive breakpoint ───────────────────────────── */
+
+@media (max-width: 768px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pinned-repos {
+    grid-template-columns: 1fr;
+  }
+}
